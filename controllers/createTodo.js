@@ -1,10 +1,9 @@
 const Todo = require("../models/todo"); // import schema 
 
-
 exports.createTodo = async(req, res) => { // this is route handler to handle the data by user
     try{
        const {title, description} = req.body;
-const response = await Todo.create({title, description});
+       const response = await Todo.create({title, description});
 
        res.status(200).json( // sedning a green status of json to identify data added
         {
